@@ -30,7 +30,7 @@ GPIO.setup(c_pin, GPIO.OUT)
 GPIO.setup(latch_pin, GPIO.OUT)
 GPIO.setup(oe_pin, GPIO.OUT)
 
-screen = [[0 for x in xrange(32)] for x in xrange(16)]
+screen = [[0 for x in range(32)] for x in range(16)]
 
 def clock():
     GPIO.output(clock_pin, 1)
@@ -94,9 +94,132 @@ def fill_rectangle(x1, y1, x2, y2, color):
 def set_pixel(x, y, color):
     screen[y][x] = color
 
-fill_rectangle(0, 0, 12, 12, 1)
-fill_rectangle(20, 4, 30, 15, 2)
-fill_rectangle(15, 0, 19, 7, 7)
+def number0(x, y):
+    for x in range(3):
+        screen[y][x+2]=1
+        screen[y+7][x+2]=1
+        x+=1
+    for y in range(6):
+        screen[y+1][x+1]=1
+        screen[y+1][x+5]=1
+        y+=1
+    
+    
+def number1(x, y):
+    for y in range(8):
+        screen[y][x+3]=1
+        y+=1
+    screen[y+1][x+2]=1
+    screen[y+7][x+2]=1
+    screen[y+7][x+4]=1
+    
+def number2(x, y):
+    for x in range (3):
+        screen[y][x+2]=1
+    screen[y+1][x+1]=1
+    for y in range (3):
+        screen[y+1][x+5]=1
+        y+=1
+    screen[y+4][x+4]=1
+    screen[y+5][x+3]=1
+    screen[y+6][x+2]=1
+    for x in range (5):
+        screen[y+7][x+1]=1
+        x+=1
+
+def number3(x, y):
+    for x in range (3):
+        screen[y][x+2]=1
+        screen[y+3][x+2]=1
+        screen[y+7][x+2]=1
+        x+=1
+    screen[y+1][x+1]=1
+    screen[y+1][x+5]=1
+    screen[y+2][x+5]=1
+    screen[y+6][x+1]=1
+    for y in range (3):
+        screen[y+4][x+5]=1
+        y+=1
+
+def number4(x, y):
+    for y in range(8):
+        screen[y][x+5]=1
+        y+=1
+    for x in range(5):
+        screen[y+5][x+1]=1
+        x+=1
+    screen[y+1][x+4]=1
+    screen[y+2][x+3]=1
+    screen[y+3][x+2]=1
+    screen[y+4][x+1]=1
+        
+
+def number5(x, y):
+    for x in range (3):
+        screen[y][x+2]=1
+        screen[y+3][x+2]=1
+        screen[y+7][x+2]=1
+        x+=1
+    screen[y][x+5]=1
+    for y in range(4):
+        screen[y][x+1]=1
+        y+=1
+    for y in range(3):
+        screen[y+4][x+5]=1
+        y+=1
+    screen[y+6][x+1]=1
+    
+
+def number6(x, y):
+    for x in range(3):
+        screen[y][x+2]=1
+        screen[y+3][x]=1
+        screen[y+7][x]=1
+        x+=1
+    for y in range(6):
+        screen[y+1][x+1]=1
+        screen[y+1][x+5]=1
+        y+=1
+    screen[y+2][x+5]=0
+    screen[y+3][x+5]=0
+
+def number7(x, y):
+    for x in range(5):
+        screen[y][x+1]=1
+        x+=1
+    for y in range(3):
+        screen[y][x+5]=1
+        screen[y+5][x+2]=1
+        y+=1
+    screen[y+3][x+4]=1
+    screen[y+4][x+3]=1
+
+def number8(x, y):
+    for x in range (3):
+        screen[y][x+2]=1
+        screen[y+3][x+2]=1
+        screen[y+7][x+2]=1
+    for y in range (6):
+        screen[y+1][x+1]=1
+        screen[y+1][x+5]=1
+        y+=1
+    screen[y+3][x+1]=0
+    screen[y+3][x+5]=1
+    
+
+def number9(x, y):
+    for x in range(3):
+        screen[y][x+2]=1
+        screen[y+4][x+2]=1
+        screen[y+7][x+2]=1
+        x+=1
+    for y in range(6):
+        screen[y+1][x+1]=1
+        screen[y+1][x+5]=1
+        y+=1
+    screen[y+4][x+1]=0
+    screen[y+5][x+1]=0
+
 
 while True:
     refresh()
