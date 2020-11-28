@@ -244,32 +244,32 @@ turget=input()
 turget=list(turget)
 print(turget)
 
-if turget[0]==1:
+if turget[0]=="1":
     number1(8,0)
         
-elif turget[0]==2:
+elif turget[0]=="2":
     number2(8,0)
         
-elif turget[0]==3:
+elif turget[0]=="3":
     number3(8,0)
         
 
-elif turget[0]==4:
+elif turget[0]=="4":
     number4(8,0)
         
-elif turget[0]==5:
+elif turget[0]=="5":
     number5(8,0)
         
-elif turget[0]==6:
+elif turget[0]=="6":
     number6(8,0)
         
-elif turget[0]==7:
+elif turget[0]=="7":
     number7(8,0)
         
-elif turget[0]==8:
+elif turget[0]=="8":
     number8(8,0)
         
-elif turget[0]==9:
+elif turget[0]=="9":
     number9(8,0)
         
 else :
@@ -279,32 +279,32 @@ else :
 
 
 
-if turget[1]==1:
+if turget[1]=="1":
     number1(16,0)
         
-elif turget[1]==2:
+elif turget[1]=="2":
     number2(16,0)
         
-elif turget[1]==3:
+elif turget[1]=="3":
     number3(16,0)
         
                 
-elif turget[1]==4:
+elif turget[1]=="4":
     number4(16,0)
         
-elif turget[1]==5:
+elif turget[1]=="5":
     number5(16,0)
         
-elif turget[1]==6:
+elif turget[1]=="6":
     number6(16,0)
         
-elif turget[1]==7:
+elif turget[1]=="7":
     number7(16,0)
         
-elif turget[1]==8:
+elif turget[1]=="8":
     number8(16,0)
         
-elif turget[1]==9:
+elif turget[1]=="9":
     number9(16,0)
         
 else :
@@ -312,30 +312,31 @@ else :
 
 
 
-if turget[2]==1:
+if turget[2]=="1":
     number1(24,0)
         
-elif turget[2]==2:
+elif turget[2]=="2":
     number2(24,0)
         
-elif turget[2]==3:
+elif turget[2]=="3":
     number3(24,0)
         
-elif turget[2]==4:
+elif turget[2]=="4":
     number4(24,0)
         
-elif turget[2]==5:
+elif turget[2]=="5":
     number5(24,0)
         
-elif turget[2]==6:
+elif turget[2]=="6":
     number6(24,0)
         
-elif turget[2]==7:
+elif turget[2]=="7":
     number7(24,0)
-elif turget[2]==8:
+    
+elif turget[2]=="8":
     number8(24,0)
 
-elif turget[2]==9:
+elif turget[2]=="9":
     number9(24,0)
 else :
     number0(0,0)
