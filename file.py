@@ -485,6 +485,11 @@ try:
             refresh()
             screen[14][4]=0
             refresh()
+            time_start=time.time()
+            while 1:
+                time_finish=time.time()
+                if time_finnish-time_start>delay_time:
+                    break;
             
 except :
     GPIO.cleanup()
