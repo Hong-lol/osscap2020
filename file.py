@@ -16,6 +16,8 @@ b_pin = 23
 c_pin = 24
 latch_pin = 4
 oe_pin = 18
+laser_out=12
+laser_in=13
 
 GPIO.setup(red1_pin, GPIO.OUT)
 GPIO.setup(green1_pin, GPIO.OUT)
@@ -29,6 +31,8 @@ GPIO.setup(b_pin, GPIO.OUT)
 GPIO.setup(c_pin, GPIO.OUT)
 GPIO.setup(latch_pin, GPIO.OUT)
 GPIO.setup(oe_pin, GPIO.OUT)
+gpio.setup(laser_out, gpio.OUT)
+gpio.setup(laser_in, gpio.IN)
 
 screen = [[0 for x in range(32)] for x in range(16)]
 
@@ -339,8 +343,131 @@ elif turget[2]=="8":
 elif turget[2]=="9":
     number9(24,0)
 else :
-    number0(0,0)
+    number0(24,0)
 
+try:
+    queue = []
+    now = 0
+    display_time = 0
+    
+    while True:
+        light = gpio.input(laser_in)
+        gpio.output(laser_out, True)
+        
+        if light == 1 and now == 0:
+            now = time.time()
+        
+        if light == 0 and now != 0:
+            queue.append(now)
+            now = 0
+            if len(queue) > 5:
+                queue.pop(0)
+        
+        if len(queue) == 5:
+            ans = 0
+            for i in range 4:
+                ans += queue[i+1] - queue[i]
+            display_time = ans / 5
+        180%display_time = speed
+        speed=int(speed)
+
+        if speed[0]=="1":
+            number1(8,8)
+                
+        elif speed[0]=="2":
+            number2(8,8)
+                
+        elif speed[0]=="3":
+            number3(8,8)
+                
+
+        elif speed[0]=="4":
+            number4(8,8)
+                
+        elif speed[0]=="5":
+            number5(8,8)
+                
+        elif speed[0]=="6":
+            number6(8,8)
+                
+        elif speed[0]=="7":
+            number7(8,8)
+                
+        elif speed[0]=="8":
+            number8(8,8)
+                
+        elif speed[0]=="9":
+            number9(8,8)
+                
+        else :
+            number0(8,8)
+
+
+
+
+
+        if speed[1]=="1":
+            number1(16,8)
+                
+        elif speed[1]=="2":
+            number2(16,8)
+                
+        elif speed[1]=="3":
+            number3(16,8)
+                
+                        
+        elif speed[1]=="4":
+            number4(16,8)
+                
+        elif speed[1]=="5":
+            number5(16,8)
+                
+        elif speed[1]=="6":
+            number6(16,8)
+                
+        elif speed[1]=="7":
+            number7(16,8)
+                
+        elif speed[1]=="8":
+            number8(16,8)
+                
+        elif speed[1]=="9":
+            number9(16,8)
+                
+        else :
+            number0(16,8)
+
+
+
+        if speed[2]=="1":
+            number1(24,8)
+                
+        elif speed[2]=="2":
+            number2(24,8)
+                
+        elif speed[2]=="3":
+            number3(24,8)
+                
+        elif speed[2]=="4":
+            number4(24,8)
+                
+        elif speed[2]=="5":
+            number5(24,8)
+                
+        elif speed[2]=="6":
+            number6(24,8)
+                
+        elif speed[2]=="7":
+            number7(24,8)
+            
+        elif speed[2]=="8":
+            number8(24,8)
+
+        elif speed[2]=="9":
+            number9(24,8)
+        else :
+            number0(24,8)
+             
 
 
 while True:
