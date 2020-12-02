@@ -18,9 +18,31 @@ gpio.setup(laser_out, gpio.OUT)
 gpio.setup(laser_in, gpio.IN)
 
 try:
+    queue = []
+    now = 0
+    display_time = 0
+    
     while True:
         light = gpio.input(laser_in)
         gpio.output(laser_out, True)
-        print(light)
+        
+        if light == 1 && now == 0:
+            now = time.time()
+        
+        if light == 0 && now != 0:
+            queue.append(now)
+            now = 0
+            if len(queue) > 5:
+                queue.pop(0)
+        
+        if len(queue) == 5:
+            ans = 0
+            for i in range 4:
+                ans += queue[i+1] - queue[i]
+            display_time = ans / 5
+        
+        print(display_time)
+            
+        
 except:
     gpio.cleanup()
