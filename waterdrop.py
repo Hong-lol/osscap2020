@@ -47,3 +47,4 @@ while 1:
     screen[14][3]=0 
     screen[14][4]=0 
     time.sleep(display_time)
+    refresh()
