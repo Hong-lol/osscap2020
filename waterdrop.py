@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import random
 
 delay = 0.0015
 
@@ -32,18 +33,20 @@ GPIO.setup(latch_pin, GPIO.OUT)
 GPIO.setup(oe_pin, GPIO.OUT)
 
 screen = [[0 for x in range(32)] for x in range(16)]
-
 while 1:
     screen[1][4]=1
     screen[1][3]=1
+    refresh()
     for i in range(14): 
         screen[i+2][4]=1 
         screen[i+2][3]=1
         screen[i][4]=0
-        screen[i][3]=0 
+        screen[i][3]=0
+        refresh()
         time.sleep(0.0005) 
     screen[15][4]=0 
     screen[15][3]=0 
     screen[14][3]=0 
-    screen[14][4]=0 
+    screen[14][4]=0
+    refresh()
     time.sleep(display_time)
