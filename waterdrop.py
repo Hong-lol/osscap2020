@@ -54,5 +54,8 @@ while 1:
     screen[14][a]=0 
     screen[14][a+1]=0
     refresh()
-    time.sleep(display_time)
-    refresh()
+    time_start=time.time()
+    while 1:
+        time_finish=time.time()
+        if time_finnish-time_start>delay_time:
+            break;
