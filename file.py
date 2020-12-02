@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 import threading
 import time
-import LED_display as LMD
 
 delay = 0.000001
 
@@ -237,104 +236,10 @@ def number9(x, y):
     screen[y+4][x+1]=0
     screen[y+5][x+1]=0
 
-turget=['1','2','5']
 
-if turget[0]=="1":
-    number1(8,0)
-        
-elif turget[0]=="2":
-    number2(8,0)
-        
-elif turget[0]=="3":
-    number3(8,0)
-        
-
-elif turget[0]=="4":
-    number4(8,0)
-        
-elif turget[0]=="5":
-    number5(8,0)
-        
-elif turget[0]=="6":
-    number6(8,0)
-        
-elif turget[0]=="7":
-    number7(8,0)
-        
-elif turget[0]=="8":
-    number8(8,0)
-        
-elif turget[0]=="9":
-    number9(8,0)
-        
-else :
-    number0(8,0)
-
-
-
-
-
-if turget[1]=="1":
-    number1(16,0)
-        
-elif turget[1]=="2":
-    number2(16,0)
-        
-elif turget[1]=="3":
-    number3(16,0)
-        
-                
-elif turget[1]=="4":
-    number4(16,0)
-        
-elif turget[1]=="5":
-    number5(16,0)
-        
-elif turget[1]=="6":
-    number6(16,0)
-        
-elif turget[1]=="7":
-    number7(16,0)
-        
-elif turget[1]=="8":
-    number8(16,0)
-        
-elif turget[1]=="9":
-    number9(16,0)
-        
-else :
-    number0(16,0)
-
-
-
-if turget[2]=="1":
-    number1(24,0)
-        
-elif turget[2]=="2":
-    number2(24,0)
-        
-elif turget[2]=="3":
-    number3(24,0)
-        
-elif turget[2]=="4":
-    number4(24,0)
-        
-elif turget[2]=="5":
-    number5(24,0)
-        
-elif turget[2]=="6":
-    number6(24,0)
-        
-elif turget[2]=="7":
-    number7(24,0)
-    
-elif turget[2]=="8":
-    number8(24,0)
-
-elif turget[2]=="9":
-    number9(24,0)
-else :
-    number0(24,0)
+number1(8,0)
+number2(16,0)
+number5(24,0)
 try:
     queue = []
     now = 0
@@ -483,8 +388,6 @@ try:
             refresh()
             screen[14][4]=0
             refresh()
-            time.sleep(display_time)
-            
 
 except :
     GPIO.cleanup()
