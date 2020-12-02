@@ -31,8 +31,8 @@ GPIO.setup(b_pin, GPIO.OUT)
 GPIO.setup(c_pin, GPIO.OUT)
 GPIO.setup(latch_pin, GPIO.OUT)
 GPIO.setup(oe_pin, GPIO.OUT)
-gpio.setup(laser_out, gpio.OUT)
-gpio.setup(laser_in, gpio.IN)
+GPIO.setup(laser_out, GPIO.OUT)
+GPIO.setup(laser_in, GPIO.IN)
 
 screen = [[0 for x in range(32)] for x in range(16)]
 
@@ -268,110 +268,106 @@ try:
             for i in range (4):
                 ans += queue[i+1] - queue[i]
             display_time = ans / 5
-        if display_time !=0:
-            break
+        if display_time != 0:
+            speed=180//display_time
+            speed=list(speed)
+
+            if speed[0]=="1":
+                number1(8,8)
+                    
+            elif speed[0]=="2":
+                number2(8,8)
+                    
+            elif speed[0]=="3":
+                number3(8,8)
+                    
+
+            elif speed[0]=="4":
+                number4(8,8)
+                    
+            elif speed[0]=="5":
+                number5(8,8)
+                    
+            elif speed[0]=="6":
+                number6(8,8)
+                    
+            elif speed[0]=="7":
+                number7(8,8)
+                    
+            elif speed[0]=="8":
+                number8(8,8)
+                    
+            elif speed[0]=="9":
+                number9(8,8)
+                    
+            else :
+                number0(8,8)
+
+
+
+
+
+            if speed[1]=="1":
+                number1(16,8)
+                    
+            elif speed[1]=="2":
+                number2(16,8)
+                    
+            elif speed[1]=="3":
+                number3(16,8)
+                    
+                            
+            elif speed[1]=="4":
+                number4(16,8)
+                    
+            elif speed[1]=="5":
+                number5(16,8)
+                    
+            elif speed[1]=="6":
+                number6(16,8)
+                    
+            elif speed[1]=="7":
+                number7(16,8)
+                    
+            elif speed[1]=="8":
+                number8(16,8)
+                    
+            elif speed[1]=="9":
+                number9(16,8)
+                    
+            else :
+                number0(16,8)
+
+
+
+            if speed[2]=="1":
+                number1(24,8)
+                    
+            elif speed[2]=="2":
+                number2(24,8)
+                    
+            elif speed[2]=="3":
+                number3(24,8)
+                    
+            elif speed[2]=="4":
+                number4(24,8)
+                    
+            elif speed[2]=="5":
+                number5(24,8)
+                    
+            elif speed[2]=="6":
+                number6(24,8)
+                    
+            elif speed[2]=="7":
+                number7(24,8)
+                
+            elif speed[2]=="8":
+                number8(24,8)
+
+            elif speed[2]=="9":
+                number9(24,8)
+            else :
+                number0(24,8)
+
 except :
     GPIO.cleanup()
-
-speed=180//display_time
-speed=list(speed)
-
-if speed[0]=="1":
-    number1(8,8)
-        
-elif speed[0]=="2":
-    number2(8,8)
-        
-elif speed[0]=="3":
-    number3(8,8)
-        
-
-elif speed[0]=="4":
-    number4(8,8)
-        
-elif speed[0]=="5":
-    number5(8,8)
-        
-elif speed[0]=="6":
-    number6(8,8)
-        
-elif speed[0]=="7":
-    number7(8,8)
-        
-elif speed[0]=="8":
-    number8(8,8)
-        
-elif speed[0]=="9":
-    number9(8,8)
-        
-else :
-    number0(8,8)
-
-
-
-
-
-if speed[1]=="1":
-    number1(16,8)
-        
-elif speed[1]=="2":
-    number2(16,8)
-        
-elif speed[1]=="3":
-    number3(16,8)
-        
-                
-elif speed[1]=="4":
-    number4(16,8)
-        
-elif speed[1]=="5":
-    number5(16,8)
-        
-elif speed[1]=="6":
-    number6(16,8)
-        
-elif speed[1]=="7":
-    number7(16,8)
-        
-elif speed[1]=="8":
-    number8(16,8)
-        
-elif speed[1]=="9":
-    number9(16,8)
-        
-else :
-    number0(16,8)
-
-
-
-if speed[2]=="1":
-    number1(24,8)
-        
-elif speed[2]=="2":
-    number2(24,8)
-        
-elif speed[2]=="3":
-    number3(24,8)
-        
-elif speed[2]=="4":
-    number4(24,8)
-        
-elif speed[2]=="5":
-    number5(24,8)
-        
-elif speed[2]=="6":
-    number6(24,8)
-        
-elif speed[2]=="7":
-    number7(24,8)
-    
-elif speed[2]=="8":
-    number8(24,8)
-
-elif speed[2]=="9":
-    number9(24,8)
-else :
-    number0(24,8)
-
-While True:
-    refresh()
