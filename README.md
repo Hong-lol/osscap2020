@@ -6,16 +6,16 @@
 # 준비물
 
 본 프로그램을 이용하기 위해서는, 조도 센서와 레이저 포인터가 필요합니다.  
-이때, 레이저 포인터는 rasberry pi 에 연결 하실 필요는 없으시며, 조도선서와 rasberry pi에 link해주는 작업이 필요합니다. 
+이때, 레이저 포인터는 rasberry pi 에 연결 하실 필요는 없으시며, 조도선서와 rasberry pi에 link해주는 작업이 필요합니다.  
 또한, 본 프로그램의 정확도를 높이기 위해서, 원통형 수액 투액기에, 180도인 정확히 반대편에서, 조도센서의 센서부분에 레이저 포인터를 비추며, 물방울이 레이저 포인터를 지나가도록 장치해두어야 합니다.
 
 # 실행방법
 
-$ sudo apt-get update 
-$ sudo apt-get install rpi.gpio 
-$ mkdir program_name 
-$ cd program_name 
-$ git clone https://github.com/Hong-lol/osscap2020.git 
-$ cd osscap2020\n
-$ sudo python3 file.py
+$ sudo apt-get update  
+$ sudo apt-get install rpi.gpio   
+$ mkdir program_name  
+$ cd program_name  
+$ git clone https://github.com/Hong-lol/osscap2020.git   
+$ cd osscap2020  
+$ sudo python3 file.py  
 
